@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form-container">
+    <h1>Create Your Portfolio</h1>
+    <form method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Company:</label>
+        <input type="text" name="company">
+
+        <label>Skills (comma separated):</label>
+        <input type="text" name="skills" placeholder="Python, Flask, HTML, CSS" required>
+
+        <label>Years of Experience:</label>
+        <input type="number" name="experience" min="0" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Phone:</label>
+        <input type="text" name="phone">
+
+        <button type="submit">Generate Portfolio</button>
+    </form>
+</div>
+{% endblock %}

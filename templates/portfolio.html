@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="portfolio-container">
+    <header>
+        <h1>{{ user.name }}</h1>
+        <h3>{{ user.company }}</h3>
+    </header>
+
+    <section>
+        <h2>Skills</h2>
+        <ul>
+            {% for skill in skills %}
+            <li>{{ skill.strip() }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+        <p>{{ user.experience }} years of experience</p>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <p>Email: {{ user.email }}</p>
+        <p>Phone: {{ user.phone }}</p>
+    </section>
+
+    <a href="{{ url_for('form') }}" class="btn">Back to Home</a>
+</div>
+{% endblock %}

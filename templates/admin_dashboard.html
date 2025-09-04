@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form-container">
+    <h1>Admin Dashboard</h1>
+    <a href="{{ url_for('admin_logout') }}" class="btn">Logout</a>
+    <h2>All User Portfolios</h2>
+    <ul>
+        {% for p in portfolios %}
+        <li>
+            <a href="{{ url_for('portfolio', portfolio_id=p.id) }}">{{ p.name }} - {{ p.company }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
